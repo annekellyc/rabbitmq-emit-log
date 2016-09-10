@@ -16,8 +16,8 @@ public class EmitLogTopic {
 
         channel.exchangeDeclare(EXCHANGE_NAME, "topic");
 
-        String routingKey = "*.critical"; // getRouting(argv);
-        String message = "Beemo"; //getMessage(argv);
+        String routingKey = getRouting(argv);
+        String message = getMessage(argv);
 
         channel.basicPublish(EXCHANGE_NAME, routingKey, null, message.getBytes());
         System.out.println(" [x] Sent '" + routingKey + "':'" + message + "'");
