@@ -1,0 +1,17 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'application'
+
+mainClassName = "com.hello.Application"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.rabbitmq', name: 'amqp-client', version: '3.6.5'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.6'
+}
